@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import requests from "../features/requests";
-import axios from "../features/axios";
+import requests from "../../Utils/requests";
+import axios from "../../Utils/axios";
 import "./banner.css";
 
 function Banner() {

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
@@ -30,8 +31,11 @@ function App() {
           <LoginScreen />
         ) : (
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <HomeScreen />
+            </Route>
+            <Route path="/profile">
+              <ProfileScreen />
             </Route>
           </Switch>
         )}

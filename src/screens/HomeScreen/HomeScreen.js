@@ -1,5 +1,5 @@
 import React from "react";
-import requests from "../../Utils/requests";
+import requests from "../../utils/requests";
 import "./homeScreen.css";
 
 import Nav from "../../components/Nav/Nav";

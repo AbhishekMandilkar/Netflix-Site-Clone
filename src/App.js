@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import { login, logout, selectUser } from "./features/userSlice";
-import { auth } from "./Utils/firebase-setup";
+import { auth } from "./utils/firebase";
 
 function App() {
   const user = useSelector(selectUser);
@@ -18,11 +18,11 @@ function App() {
         dispatch(login({ uid: userAuth.uid, email: userAuth.email }));
         console.log("loged in user is" + user);
       } else {
-        dispatch(logout);
+        dispatch(logout());
       }
     });
     return unsubscribe;
-  }, []);
+  }, [dispatch, user]);
 
   return (
     <div className="app">
